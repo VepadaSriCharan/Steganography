@@ -27,12 +27,10 @@ os – For file handling
 🔹 Setup & Installation
 
 1️⃣ Install required dependencies:
-
 bash
 Copy
 Edit
 pip install pillow cryptography
-
 2️⃣ Place the image you want to encode in the same folder as the script.
 
 3️⃣ Ensure your encryption key is exactly 16, 24, or 32 characters long.
@@ -40,12 +38,10 @@ pip install pillow cryptography
 🔹 Encoding (Hiding a Secret Message)
 
 1️⃣ Run the script:
-
 bash
 Copy
 Edit
 python newstego.py
-
 2️⃣ Select (E) Encode when prompted.
 
 3️⃣ Enter the image file name (e.g., input.png).
@@ -59,12 +55,10 @@ python newstego.py
 🔹 Decoding (Extracting the Hidden Message)
 
 1️⃣ Run the script again:
-
 bash
 Copy
 Edit
 python newstego.py
-
 2️⃣ Select (D) Decode when prompted.
 
 3️⃣ Enter the encoded image file name (e.g., output.png).
