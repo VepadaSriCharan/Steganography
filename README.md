@@ -1,41 +1,82 @@
-# Secure Data Hiding in Images Using Steganography & Cryptography
+🔐 Secure Image Steganography with Encryption & Digital Signature
+📌 Project Overview
+This project integrates Steganography, Cryptography, and Digital Signature Verification to provide secure data hiding in images. By combining AES encryption with LSB-based image steganography, the message remains confidential and tamper-proof, ensuring authenticity and security.
 
-## Overview
-This project combines **Steganography and Cryptography** to securely hide messages inside images. It ensures **confidentiality** through encryption and **integrity** through a digital signature.
+🚀 Features
+✅ AES Encryption – Secures the message before hiding it in an image.
+✅ LSB Steganography – Uses Least Significant Bit (LSB) technique for data hiding.
+✅ Digital Signature – Ensures message integrity and prevents tampering.
+✅ Authenticity Check – Verifies if the extracted message is unaltered.
+✅ User-Friendly – Simple CLI-based interaction.
 
-## Features
-- **Image Steganography**: Hides text within an image.
-- **AES Encryption**: Secures hidden messages with a user-defined key.
-- **Digital Signature Verification**: Ensures the message has not been tampered with.
-- **User-Friendly CLI**: Simple command-line interface for encoding and decoding messages.
+🛠️ Technologies Used
+Programming Language: Python
+Libraries Used:
+PIL – For image processing
+cryptography – For AES encryption
+hashlib – For digital signature verification
+os – For file handling
+📂 How to Use the Code (Step-by-Step)
+🔹 Setup & Installation
+1️⃣ Install required dependencies:
 
-## Requirements
-- Python 3.x
-- Required Libraries: Install using
-  ```sh
-  pip install pillow cryptography
-  ```
+bash
+Copy
+Edit
+pip install pillow cryptography
+2️⃣ Place the image you want to encode in the same folder as the script.
+3️⃣ Ensure your encryption key is exactly 16, 24, or 32 characters long.
 
-## How to Use
-### Encoding (Hiding a Message)
-1. Run the script and choose **Encode**.
-2. Provide the image path.
-3. Enter the secret message.
-4. Set an encryption key (16-32 characters).
-5. The program generates an encoded image with a hidden, encrypted message.
+🔹 Encoding (Hiding a Secret Message)
+1️⃣ Run the script:
 
-### Decoding (Retrieving the Message)
-1. Run the script and choose **Decode**.
-2. Provide the encoded image path.
-3. Enter the encryption key.
-4. The script verifies integrity and decrypts the message.
+bash
+Copy
+Edit
+python newstego.py
+2️⃣ Select (E) Encode when prompted.
+3️⃣ Enter the image file name (e.g., input.png).
+4️⃣ Type the secret message you want to hide.
+5️⃣ Enter a secure encryption key (16, 24, or 32 characters long).
+6️⃣ The program will create an encoded image (output.png) with the hidden message.
 
-## Integrity Verification
-After decoding, the script will confirm if the integrity check is **successful** or **failed**, ensuring the message has not been altered.
+🔹 Decoding (Extracting the Hidden Message)
+1️⃣ Run the script again:
 
-## Author
-Developed by Vepada Sri Charan – Feel free to improve and explore!
+bash
+Copy
+Edit
+python newstego.py
+2️⃣ Select (D) Decode when prompted.
+3️⃣ Enter the encoded image file name (e.g., output.png).
+4️⃣ Provide the correct decryption key (same key used during encoding).
+5️⃣ If the key is correct, the hidden message will be displayed.
+6️⃣ The integrity check will confirm whether the message is authentic or tampered with.
 
-## Contact
-For queries or suggestions, reach out via email:- vepadasricharan@gmail.com.
-
+📌 Example
+Encoding Process:
+bash
+Copy
+Edit
+Do you want to (E)ncode or (D)ecode? E
+Enter the path of the image to hide the message: input.png
+Enter the secret message to hide: Hello, World!
+Enter the encryption key (16, 24, or 32 characters): SecureKey123456
+Message successfully hidden in output.png
+Decoding Process:
+bash
+Copy
+Edit
+Do you want to (E)ncode or (D)ecode? D
+Enter the path of the encoded image: output.png
+Enter the decryption key: SecureKey123456
+Extracted Message: Hello, World!
+Integrity Check: ✅ Message is authentic.
+📌 Future Enhancements
+Support for audio & video steganography
+Cloud-based encoding/decoding
+AI-powered steganalysis resistance
+💡 Notes:
+Do not modify the encoded image after encoding; it may corrupt the hidden message.
+If you enter an incorrect decryption key, you won't get the correct message.
+The integrity check ensures authenticity by verifying the digital signature.
